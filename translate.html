@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - 翻訳画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="./home.html" class="btn-back">戻る</a>
+      <h1>翻訳</h1>
+    </header>
+    <main>
+      <div class="lang-toggle" style="margin-bottom:16px;">
+        <a href="./language.html" style="text-decoration:none; color:inherit; font-weight:bold;">英語</a>
+        <span>⇆</span>
+        <a href="./language.html" style="text-decoration:none; color:inherit; font-weight:bold;">日本語</a>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <a href="./language.html" class="btn">言語選択</a>
+      </div>
+
+      <div class="translate-tools">
+        <button type="button" id="camera-btn" class="btn translate-btn">
+          <img src="./images/camera_icon.png" alt="カメラ" style="width:24px; height:24px;" onerror="this.style.display='none';">
+          <span>カメラ</span>
+        </button>
+        <a href="./cameraroll.html" class="btn translate-btn">
+          <img src="./images/photo_icon.png" alt="写真" style="width:24px; height:24px;" onerror="this.style.display='none';">
+          <span>写真</span>
+        </a>
+        <a href="./translate_result.html" class="btn translate-btn full-btn">
+          <img src="./images/mic_icon.png" alt="音声" style="width:24px; height:24px;" onerror="this.style.display='none';">
+          <span>音声</span>
+        </a>
+      </div>
+
+      <div style="margin-top:16px;">
+        <a href="./translate_sub.html" class="btn" style="border:1px dashed #888; color:#666;">（詳細・拡張表示画面へ）</a>
+      </div>
+
+      <div style="margin-top:10px;">
+        <a href="./home.html" class="btn">戻る</a>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./home.html" class="nav-item">
+        <div class="nav-icon">🏠</div>
+        <span>ホーム</span>
+      </a>
+      <a href="./map.html" class="nav-item">
+        <div class="nav-icon">📍</div>
+        <span>マップ</span>
+      </a>
+      <a href="./translate.html" class="nav-item active">
+        <div class="nav-icon">🌐</div>
+        <span>翻訳</span>
+      </a>
+      <a href="./board.html" class="nav-item">
+        <div class="nav-icon">📋</div>
+        <span>掲示板</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

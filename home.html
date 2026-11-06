@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - ホーム画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>ホーム画面</h1>
+    </header>
+    <main>
+      <div class="status-grid">
+        <a href="./rank.html" class="card card-link">
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:4px;">
+            <img src="./images/crown_icon.png" alt="王冠" style="width:20px; height:20px;" onerror="this.style.display='none';">
+            <span style="font-size:12px; color:#666;">ランク</span>
+          </div>
+          <div style="font-size:24px; font-weight:bold;">Lv.3</div>
+          <div style="font-size:11px; color:#888; margin-top:4px;">ポイントに応じてランクが上がる</div>
+        </a>
+        <div class="card">
+          <div style="font-size:12px; color:#666; margin-bottom:4px;">獲得ポイント</div>
+          <div style="font-size:28px; font-weight:bold;">12</div>
+          <div style="font-size:12px; color:#666;">ポイント</div>
+          <div style="font-size:11px; color:#888; margin-top:4px;">投稿して各種特典に使える</div>
+        </div>
+      </div>
+
+      <div class="card profile-card" style="margin-top:12px;">
+        <div class="img-box" style="width:60px; height:60px; border-radius:50%;">
+          <img src="./images/profile_icon.png" alt="アイコン" onerror="this.style.display='none'; this.parentElement.innerText='アイコン';">
+        </div>
+        <div>
+          <div style="font-size:16px; font-weight:bold;">プロフィール</div>
+          <div style="font-size:13px; color:#666;">ユーザー：利用者A</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <button type="button" class="btn">設定</button>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./home.html" class="nav-item active">
+        <div class="nav-icon">🏠</div>
+        <span>ホーム</span>
+      </a>
+      <a href="./map.html" class="nav-item">
+        <div class="nav-icon">📍</div>
+        <span>マップ</span>
+      </a>
+      <a href="./translate.html" class="nav-item">
+        <div class="nav-icon">🌐</div>
+        <span>翻訳</span>
+      </a>
+      <a href="./board.html" class="nav-item">
+        <div class="nav-icon">📋</div>
+        <span>掲示板</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

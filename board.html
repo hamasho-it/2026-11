@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - 掲示板画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="./home.html" class="btn-back">戻る</a>
+      <h1>掲示板</h1>
+    </header>
+    <main>
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <a href="./post.html" class="btn btn-primary" style="margin-bottom:0;">投稿</a>
+        <a href="./home.html" class="btn" style="margin-bottom:0;">戻る</a>
+      </div>
+
+      <div class="notice-box">
+        実際に現地（半径20m以内）にいる人にしか投稿ができないGPS連携機能でリアルタイムな情報を発信！
+      </div>
+
+      <!-- サンプル投稿カード1 -->
+      <div class="post-card">
+        <div class="post-header">
+          <span>吉村食堂</span>
+          <span style="font-size:12px; color:#888;">たった今</span>
+        </div>
+        <p style="font-size:13px; color:#555;">住所：サンプル県サンプル市サンプル町1-1</p>
+        <p style="font-size:13px; color:#555; margin-bottom:8px;">営業時間：11:00〜15:00 / 17:00〜21:00</p>
+        <div class="tag-list">
+          <span class="tag">今、空いている</span>
+          <span class="tag">並ばずに入れる</span>
+        </div>
+        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Not crowded / No waiting time]</div>
+      </div>
+
+      <!-- サンプル投稿カード2 -->
+      <div class="post-card">
+        <div class="post-header">
+          <span>サンプル和菓子処</span>
+          <span style="font-size:12px; color:#888;">10分前</span>
+        </div>
+        <p style="font-size:13px; color:#555;">本日のおすすめ：名物おむすび餅</p>
+        <div class="tag-list">
+          <span class="tag">売り切れ間近</span>
+        </div>
+        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Almost sold out]</div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./home.html" class="nav-item">
+        <div class="nav-icon">🏠</div>
+        <span>ホーム</span>
+      </a>
+      <a href="./map.html" class="nav-item">
+        <div class="nav-icon">📍</div>
+        <span>マップ</span>
+      </a>
+      <a href="./translate.html" class="nav-item">
+        <div class="nav-icon">🌐</div>
+        <span>翻訳</span>
+      </a>
+      <a href="./board.html" class="nav-item active">
+        <div class="nav-icon">📋</div>
+        <span>掲示板</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - 投稿画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container no-nav">
+    <header>
+      <a href="./board.html" class="btn-back">戻る</a>
+      <h1>投稿画面</h1>
+    </header>
+    <main>
+      <div class="notice-box">
+        登録してあるお店やイベントのアカウントでのみ投稿が可能です。<br>
+        ※ユーザーは長文入力ではなく定型文やタグを選んでもらう形式です。
+      </div>
+
+      <div class="card" style="margin-bottom:16px; text-align:left;">
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:8px;">店舗・スポット選択</label>
+        <div style="font-size:15px; font-weight:bold;">吉村食堂 (現在地：半径20m以内)</div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px; text-align:left;">
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:8px;">状況タグを選択（タップして選択）</label>
+        <div class="tag-list">
+          <span class="tag tag-selectable selected">今、空いている</span>
+          <span class="tag tag-selectable">並ばずに入れる</span>
+          <span class="tag tag-selectable">売り切れ間近</span>
+        </div>
+      </div>
+
+      <a href="./board.html" class="btn btn-primary">投稿する</a>
+      <a href="./board.html" class="btn">戻る</a>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

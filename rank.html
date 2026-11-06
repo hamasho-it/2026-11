@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - ランク詳細画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="./home.html" class="btn-back">戻る</a>
+      <h1>ランク詳細</h1>
+    </header>
+    <main>
+      <div class="card" style="text-align:center;">
+        <div style="display:flex; justify-content:center; align-items:center; gap:8px;">
+          <img src="./images/crown_icon.png" alt="王冠" style="width:30px; height:30px;" onerror="this.style.display='none';">
+          <span style="font-size:16px; font-weight:bold;">ランク</span>
+        </div>
+        <div style="font-size:32px; font-weight:bold; margin:10px 0;">Lv.3</div>
+        <div style="font-size:14px; color:#666;">次のランクまで <strong style="color:#000;">2/5</strong></div>
+      </div>
+
+      <div class="pyramid-container">
+        <div class="img-box" style="height:200px;">
+          <img src="./images/rank_pyramid.png" alt="ランクピラミッド図" class="pyramid-img" onerror="this.style.display='none'; this.parentElement.innerText='ランクピラミッド図 (Lv.3)';">
+        </div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./home.html" class="nav-item">
+        <div class="nav-icon">🏠</div>
+        <span>ホーム</span>
+      </a>
+      <a href="./map.html" class="nav-item">
+        <div class="nav-icon">📍</div>
+        <span>マップ</span>
+      </a>
+      <a href="./translate.html" class="nav-item">
+        <div class="nav-icon">🌐</div>
+        <span>翻訳</span>
+      </a>
+      <a href="./board.html" class="nav-item">
+        <div class="nav-icon">📋</div>
+        <span>掲示板</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

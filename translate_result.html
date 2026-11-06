@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - 翻訳結果画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container no-nav">
+    <header>
+      <a href="./translate.html" class="btn-back">戻る</a>
+      <h1>翻訳結果</h1>
+    </header>
+    <main>
+      <div style="margin-bottom:12px;">
+        <a href="./language.html" class="btn" style="margin-bottom:0;">言語選択</a>
+      </div>
+
+      <div style="text-align:center; margin: 12px 0;">
+        <button type="button" id="mic-btn" class="btn" style="width:100px; height:60px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <img src="./images/mic_icon.png" alt="マイク" style="width:20px; height:20px;" onerror="this.style.display='none';">
+          <span>マイク</span>
+        </button>
+      </div>
+
+      <div class="translate-output">
+        <div style="font-weight:bold; color:#666; font-size:13px; margin-bottom:8px;">翻訳した言語の出力</div>
+        <p style="font-size:16px; color:#000;">「吉村食堂のおすすめメニューは何ですか？」</p>
+        <hr style="margin:12px 0; border:0; border-top:1px dashed #ccc;">
+        <p style="font-size:16px; color:#333;">"What is the recommended menu at Yoshimura Shokudo?"</p>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <a href="./translate.html" class="btn btn-primary">戻る</a>
+      </div>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

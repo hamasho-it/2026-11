@@ -1,12 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>準備中</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - トップ画面</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body style="font-family:sans-serif;text-align:center;margin-top:30vh">
-<h1>準備中</h1>
-<p>このページは、チームのアプリを公開すると入れ替わります。</p>
+<body>
+  <div class="app-container no-nav">
+    <header>
+      <h1>oh,結び</h1>
+    </header>
+    <main>
+      <div class="top-hero">
+        <div class="img-box" style="width:140px; height:140px; margin:0 auto 20px; border-radius:50%;">
+          <img src="./images/logo.png" alt="おにぎりロゴ" onerror="this.style.display='none'; this.parentElement.innerText='ロゴ画像';">
+        </div>
+        <h2>oh,結び（omusubi）</h2>
+        <p style="font-size:13px; color:#666; margin-top:8px;">地域と観光客をリアルタイムで結ぶ</p>
+      </div>
+      <div style="margin-top: 20px;">
+        <a href="./register.html" class="btn">新規登録</a>
+        <a href="./login.html" class="btn">ログイン</a>
+      </div>
+    </main>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>

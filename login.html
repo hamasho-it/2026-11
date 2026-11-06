@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oh,結び - ログイン画面</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container no-nav">
+    <header>
+      <a href="./index.html" class="btn-back">戻る</a>
+      <h1>ログイン画面</h1>
+    </header>
+    <main>
+      <form onsubmit="return false;">
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:6px;">ログインID</label>
+        <input type="text" placeholder="ログインIDを入力">
+        
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:6px;">パスワード</label>
+        <input type="password" placeholder="パスワードを入力">
+        
+        <div style="margin-top: 30px;">
+          <a href="./home.html" class="btn btn-primary">ログイン</a>
+          <a href="./index.html" class="btn">戻る</a>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
