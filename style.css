@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   position: relative;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding-bottom: 70px; /* Space for bottom nav */
+  padding-bottom: 70px;
 }
 
 .app-container.no-nav {
@@ -54,7 +54,7 @@ header .btn-back {
   padding: 6px 12px;
   border-radius: 4px;
   text-decoration: none;
-  color: #333;
+  color: #333333;
   font-size: 14px;
 }
 
@@ -66,7 +66,6 @@ main {
   gap: 16px;
 }
 
-/* Common UI Elements */
 .btn {
   display: block;
   width: 100%;
@@ -98,7 +97,7 @@ main {
   background-color: #555555;
 }
 
-input[type="text"], input[type="password"], input[type="tel"], textarea {
+input[type="text"], input[type="password"], input[type="tel"], textarea, select {
   width: 100%;
   padding: 12px;
   border: 1px solid #cccccc;
@@ -125,21 +124,11 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   object-fit: contain;
 }
 
-/* Top Screen */
 .top-hero {
   text-align: center;
   padding: 40px 0;
 }
 
-.top-hero img {
-  width: 140px;
-  height: 140px;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-}
-
-/* Home Screen */
 .status-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -158,6 +147,11 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   text-decoration: none;
   color: inherit;
   display: block;
+  transition: background-color 0.2s;
+}
+
+.card-link:active {
+  background-color: #f5f5f5;
 }
 
 .profile-card {
@@ -167,14 +161,6 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   text-align: left;
 }
 
-.profile-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-}
-
-/* Pyramid Display */
 .pyramid-container {
   text-align: center;
   padding: 20px 0;
@@ -186,7 +172,6 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   margin: 0 auto;
 }
 
-/* Map Screen */
 .map-placeholder {
   height: 300px;
   background-color: #d8d8d8;
@@ -199,7 +184,6 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   border-radius: 8px;
 }
 
-/* Transport Screen */
 .transport-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -223,7 +207,6 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   border-color: #333333;
 }
 
-/* Board & Post Screen */
 .post-card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -240,11 +223,19 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   justify-content: space-between;
 }
 
+.tag-category-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .tag {
@@ -253,10 +244,22 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   border-radius: 16px;
   font-size: 13px;
   cursor: pointer;
+  user-select: none;
 }
 
 .tag.selected {
   background-color: #333333;
+  color: #ffffff;
+}
+
+.tag-special {
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #ffb3b3;
+}
+
+.tag-special.selected {
+  background-color: #cc0000;
   color: #ffffff;
 }
 
@@ -270,16 +273,123 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   line-height: 1.4;
 }
 
-/* Translate Screen */
-.lang-toggle {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px;
-  background: #f5f5f5;
+.ad-banner {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border: 1px solid #ffe082;
   border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.ad-badge {
+  background-color: #ff9800;
+  color: #ffffff;
+  font-size: 10px;
   font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.ad-content h4 {
+  font-size: 14px;
+  color: #5d4037;
+  margin-bottom: 2px;
+}
+
+.ad-content p {
+  font-size: 11px;
+  color: #795548;
+}
+
+.ad-btn {
+  background: #ff9800;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lang-dual-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.lang-select-frame {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.lang-select-frame .label {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+.lang-select-frame .value {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.lang-swap-btn {
+  background: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   font-size: 16px;
+}
+
+.text-translate-box {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.text-translate-box label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.text-translate-box textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  background-color: #fafafa;
+  resize: vertical;
 }
 
 .translate-tools {
@@ -303,16 +413,15 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
 }
 
 .translate-output {
-  min-height: 180px;
+  min-height: 140px;
   background-color: #f8f8f8;
   border: 1px solid #dddddd;
   border-radius: 8px;
-  padding: 16px;
-  font-size: 16px;
+  padding: 14px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
-/* Camera Roll Grid */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -327,10 +436,110 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  color: #666;
+  color: #666666;
 }
 
-/* Bottom Nav */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #333333;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.avatar-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.avatar-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #cccccc;
+}
+
+.reward-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
+
+.reward-info h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.reward-info p {
+  font-size: 12px;
+  color: #666666;
+}
+
+.reward-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  width: auto;
+  margin-bottom: 0;
+}
+
 .bottom-nav {
   position: absolute;
   bottom: 0;
@@ -368,4 +577,10 @@ input[type="text"], input[type="password"], input[type="tel"], textarea {
   align-items: center;
   justify-content: center;
   font-size: 10px;
+}
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }

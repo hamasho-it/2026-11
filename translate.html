@@ -13,17 +13,33 @@
       <h1>翻訳</h1>
     </header>
     <main>
-      <div class="lang-toggle" style="margin-bottom:16px;">
-        <a href="./language.html" style="text-decoration:none; color:inherit; font-weight:bold;">英語</a>
-        <span>⇆</span>
-        <a href="./language.html" style="text-decoration:none; color:inherit; font-weight:bold;">日本語</a>
+      <!-- 2枠言語選択UI -->
+      <div class="lang-dual-box" style="margin-bottom:12px;">
+        <a href="./language.html" class="lang-select-frame" style="text-decoration:none;">
+          <div class="label">翻訳元（入力）</div>
+          <div class="value" id="display-from-lang">日本語</div>
+        </a>
+        <button type="button" class="lang-swap-btn" id="swap-lang-btn" title="言語を入れ替え">⇄</button>
+        <a href="./language.html" class="lang-select-frame" style="text-decoration:none;">
+          <div class="label">翻訳先（出力）</div>
+          <div class="value" id="display-to-lang">英語</div>
+        </a>
       </div>
 
-      <div style="margin-bottom:16px;">
-        <a href="./language.html" class="btn">言語選択</a>
+      <!-- 文字入力翻訳エリア -->
+      <div class="text-translate-box">
+        <label for="translate-text-input">✍️ テキストを入力して翻訳</label>
+        <textarea id="translate-text-input" placeholder="ここに翻訳したい文章や単語を入力してください..."></textarea>
+        <button type="button" id="do-translate-btn" class="btn btn-primary" style="margin-bottom:0; padding:10px;">翻訳する</button>
       </div>
 
-      <div class="translate-tools">
+      <!-- リアルタイム翻訳結果表示領域 -->
+      <div class="translate-output" id="translate-output-text">
+        <div style="font-weight:bold; color:#666; font-size:12px; margin-bottom:4px;">翻訳結果の出力エリア</div>
+        <p style="color:#888; font-size:13px;">上にテキストを入力するか「翻訳する」を押すと結果が表示されます。</p>
+      </div>
+
+      <div style="margin-top:12px;" class="translate-tools">
         <button type="button" id="camera-btn" class="btn translate-btn">
           <img src="./images/camera_icon.png" alt="カメラ" style="width:24px; height:24px;" onerror="this.style.display='none';">
           <span>カメラ</span>
@@ -34,12 +50,8 @@
         </a>
         <a href="./translate_result.html" class="btn translate-btn full-btn">
           <img src="./images/mic_icon.png" alt="音声" style="width:24px; height:24px;" onerror="this.style.display='none';">
-          <span>音声</span>
+          <span>音声翻訳へ</span>
         </a>
-      </div>
-
-      <div style="margin-top:16px;">
-        <a href="./translate_sub.html" class="btn" style="border:1px dashed #888; color:#666;">（詳細・拡張表示画面へ）</a>
       </div>
 
       <div style="margin-top:10px;">

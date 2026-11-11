@@ -15,24 +15,44 @@
     <main>
       <div class="notice-box">
         登録してあるお店やイベントのアカウントでのみ投稿が可能です。<br>
-        ※ユーザーは長文入力ではなく定型文やタグを選んでもらう形式です。
+        ※タグを選択し、自由入力コメント（任意）を書いて「投稿する」を押してください！
+      </div>
+
+      <div class="card" style="margin-bottom:14px; text-align:left;">
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:6px;">店舗・スポット選択</label>
+        <select id="post-spot-select">
+          <option value="吉村食堂">吉村食堂 (現在地：半径20m以内)</option>
+          <option value="結び夏祭り会場">結び夏祭り会場 (特設ステージ)</option>
+          <option value="サンプル和菓子処">サンプル和菓子処</option>
+        </select>
+      </div>
+
+      <div class="card" style="margin-bottom:14px; text-align:left;">
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:6px;">コメント入力（任意）</label>
+        <input type="text" id="post-comment-input" placeholder="例：本日のおすすめメニューや最新情報を入力">
       </div>
 
       <div class="card" style="margin-bottom:16px; text-align:left;">
-        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:8px;">店舗・スポット選択</label>
-        <div style="font-size:15px; font-weight:bold;">吉村食堂 (現在地：半径20m以内)</div>
-      </div>
+        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:4px;">タグを選択（タップして選択）</label>
+        
+        <div class="tag-category-title">🎉 お祭り・スペシャル情報</div>
+        <div class="tag-list">
+          <span class="tag tag-special tag-selectable selected">🎉 お祭り・イベント開催中</span>
+          <span class="tag tag-special tag-selectable">⭐ 本日限定スペシャル</span>
+          <span class="tag tag-special tag-selectable">🍡 屋台・限定メニュー</span>
+          <span class="tag tag-special tag-selectable">🎁 限定ノベルティ配布中</span>
+        </div>
 
-      <div class="card" style="margin-bottom:20px; text-align:left;">
-        <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:8px;">状況タグを選択（タップして選択）</label>
+        <div class="tag-category-title">🏪 店舗・混雑状況</div>
         <div class="tag-list">
           <span class="tag tag-selectable selected">今、空いている</span>
           <span class="tag tag-selectable">並ばずに入れる</span>
+          <span class="tag tag-selectable">やや混雑中</span>
           <span class="tag tag-selectable">売り切れ間近</span>
         </div>
       </div>
 
-      <a href="./board.html" class="btn btn-primary">投稿する</a>
+      <button type="button" id="submit-post-btn" class="btn btn-primary">投稿する</button>
       <a href="./board.html" class="btn">戻る</a>
     </main>
   </div>

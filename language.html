@@ -13,14 +13,28 @@
       <h1>言語を選択</h1>
     </header>
     <main>
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div class="btn lang-item selected" style="text-align:left; padding-left:20px;">日本語</div>
-        <div class="btn lang-item" style="text-align:left; padding-left:20px;">韓国語</div>
-        <div class="btn lang-item" style="text-align:left; padding-left:20px;">英語</div>
+      <div class="card" style="text-align:left; margin-bottom:14px;">
+        <h3 style="font-size:14px; font-weight:bold; margin-bottom:8px; color:#555;">【枠1】翻訳元の言語</h3>
+        <div class="lang-grid">
+          <div class="btn lang-item-from selected" data-lang="日本語" style="padding:10px;">日本語</div>
+          <div class="btn lang-item-from" data-lang="英語" style="padding:10px;">英語</div>
+          <div class="btn lang-item-from" data-lang="韓国語" style="padding:10px;">韓国語</div>
+          <div class="btn lang-item-from" data-lang="中国語" style="padding:10px;">中国語</div>
+        </div>
       </div>
 
-      <div style="margin-top: 30px;">
-        <a href="./translate.html" class="btn btn-primary">戻る</a>
+      <div class="card" style="text-align:left; margin-bottom:16px;">
+        <h3 style="font-size:14px; font-weight:bold; margin-bottom:8px; color:#555;">【枠2】翻訳先の言語</h3>
+        <div class="lang-grid">
+          <div class="btn lang-item-to" data-lang="日本語" style="padding:10px;">日本語</div>
+          <div class="btn lang-item-to selected" data-lang="英語" style="padding:10px;">英語</div>
+          <div class="btn lang-item-to" data-lang="韓国語" style="padding:10px;">韓国語</div>
+          <div class="btn lang-item-to" data-lang="中国語" style="padding:10px;">中国語</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 10px;">
+        <a href="./translate.html" class="btn btn-primary">決定して戻る</a>
       </div>
     </main>
 

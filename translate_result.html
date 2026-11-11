@@ -3,32 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>oh,結び - 翻訳結果画面</title>
+  <title>oh,結び - 音声・翻訳結果画面</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="app-container no-nav">
     <header>
       <a href="./translate.html" class="btn-back">戻る</a>
-      <h1>翻訳結果</h1>
+      <h1>音声翻訳結果</h1>
     </header>
     <main>
-      <div style="margin-bottom:12px;">
-        <a href="./language.html" class="btn" style="margin-bottom:0;">言語選択</a>
+      <div class="lang-dual-box" style="margin-bottom:12px;">
+        <div class="lang-select-frame">
+          <div class="label">翻訳元</div>
+          <div class="value" id="display-from-lang">日本語</div>
+        </div>
+        <button type="button" class="lang-swap-btn" id="swap-lang-btn">⇄</button>
+        <div class="lang-select-frame">
+          <div class="label">翻訳先</div>
+          <div class="value" id="display-to-lang">英語</div>
+        </div>
       </div>
 
       <div style="text-align:center; margin: 12px 0;">
-        <button type="button" id="mic-btn" class="btn" style="width:100px; height:60px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:6px;">
-          <img src="./images/mic_icon.png" alt="マイク" style="width:20px; height:20px;" onerror="this.style.display='none';">
-          <span>マイク</span>
+        <button type="button" id="mic-btn" class="btn" style="width:120px; height:60px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:6px; background:#cc0000; color:#fff; border-color:#cc0000;">
+          <img src="./images/mic_icon.png" alt="マイク" style="width:20px; height:20px; filter:invert(1);" onerror="this.style.display='none';">
+          <span>録音中...</span>
         </button>
       </div>
 
       <div class="translate-output">
-        <div style="font-weight:bold; color:#666; font-size:13px; margin-bottom:8px;">翻訳した言語の出力</div>
+        <div style="font-weight:bold; color:#666; font-size:13px; margin-bottom:8px;">音声からの翻訳結果</div>
         <p style="font-size:16px; color:#000;">「吉村食堂のおすすめメニューは何ですか？」</p>
         <hr style="margin:12px 0; border:0; border-top:1px dashed #ccc;">
-        <p style="font-size:16px; color:#333;">"What is the recommended menu at Yoshimura Shokudo?"</p>
+        <p style="font-size:16px; color:#333; font-weight:bold;">"What is the recommended menu at Yoshimura Shokudo?"</p>
       </div>
 
       <div style="margin-top: 24px;">

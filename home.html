@@ -21,25 +21,39 @@
           <div style="font-size:24px; font-weight:bold;">Lv.3</div>
           <div style="font-size:11px; color:#888; margin-top:4px;">ポイントに応じてランクが上がる</div>
         </a>
-        <div class="card">
+        
+        <a href="./point_rewards.html" class="card card-link">
           <div style="font-size:12px; color:#666; margin-bottom:4px;">獲得ポイント</div>
-          <div style="font-size:28px; font-weight:bold;">12</div>
-          <div style="font-size:12px; color:#666;">ポイント</div>
-          <div style="font-size:11px; color:#888; margin-top:4px;">投稿して各種特典に使える</div>
-        </div>
+          <div style="font-size:28px; font-weight:bold;" class="user-point-val">12</div>
+          <div style="font-size:12px; color:#666;">ポイント ➔</div>
+          <div style="font-size:11px; color:#888; margin-top:4px;">タップで特典一覧を表示</div>
+        </a>
       </div>
 
-      <div class="card profile-card" style="margin-top:12px;">
+      <div class="ad-banner">
+        <div class="ad-content">
+          <span class="ad-badge">PR 広告</span>
+          <h4>地酒と名物おむすびフェア開催！</h4>
+          <p>近隣の協賛店舗でポイント2倍キャンペーン中</p>
+        </div>
+        <a href="./point_rewards.html" class="ad-btn">詳細</a>
+      </div>
+
+      <a href="./profile_edit.html" class="card card-link profile-card">
         <div class="img-box" style="width:60px; height:60px; border-radius:50%;">
-          <img src="./images/profile_icon.png" alt="アイコン" onerror="this.style.display='none'; this.parentElement.innerText='アイコン';">
+          <img src="./images/profile_icon.png" alt="アイコン" class="avatar-preview" onerror="this.style.display='none'; this.parentElement.innerText='アイコン';">
         </div>
-        <div>
-          <div style="font-size:16px; font-weight:bold;">プロフィール</div>
-          <div style="font-size:13px; color:#666;">ユーザー：利用者A</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:16px; font-weight:bold;">プロフィール</span>
+            <span style="font-size:12px; color:#888;">編集 ➔</span>
+          </div>
+          <div style="font-size:13px; color:#666; margin-top:4px;">ユーザー：<span id="display-user-name">利用者A</span></div>
+          <div style="font-size:11px; color:#888; margin-top:2px;">タップしてアイコン・名前・通知設定を変更</div>
         </div>
-      </div>
+      </a>
 
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 10px;">
         <button type="button" class="btn">設定</button>
       </div>
     </main>

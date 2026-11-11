@@ -13,8 +13,8 @@
       <h1>掲示板</h1>
     </header>
     <main>
-      <div style="display:flex; gap:10px; margin-bottom:16px;">
-        <a href="./post.html" class="btn btn-primary" style="margin-bottom:0;">投稿</a>
+      <div style="display:flex; gap:10px; margin-bottom:14px;">
+        <a href="./post.html" class="btn btn-primary" style="margin-bottom:0;">投稿する</a>
         <a href="./home.html" class="btn" style="margin-bottom:0;">戻る</a>
       </div>
 
@@ -22,32 +22,45 @@
         実際に現地（半径20m以内）にいる人にしか投稿ができないGPS連携機能でリアルタイムな情報を発信！
       </div>
 
-      <!-- サンプル投稿カード1 -->
+      <div class="ad-banner">
+        <div class="ad-content">
+          <span class="ad-badge">PR 地元応援</span>
+          <h4>老舗和菓子処「おむすび餅」割引券</h4>
+          <p>掲示板投稿者限定で50円引きクーポン配布中！</p>
+        </div>
+        <a href="./point_rewards.html" class="ad-btn">GET</a>
+      </div>
+
+      <div id="user-posts-container"></div>
+
+      <div class="post-card" style="border:2px solid #ffb3b3; background:#fff0f0;">
+        <div class="post-header">
+          <span style="color:#cc0000;">🎉 結び夏祭り実行委員会</span>
+          <span style="font-size:12px; color:#888;">いま話題！</span>
+        </div>
+        <p style="font-size:13px; color:#555;">場所：駅前中央広場（特設会場）</p>
+        <p style="font-size:13px; color:#333; margin-top:4px; font-weight:bold;">本日18時より太鼓パフォーマンス＆屋台スタート！</p>
+        <div class="tag-list">
+          <span class="tag tag-special">🎉 お祭り・イベント開催中</span>
+          <span class="tag tag-special">🍡 屋台・限定メニュー</span>
+          <span class="tag">混雑中</span>
+        </div>
+        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Festival & Special Event in progress!]</div>
+      </div>
+
       <div class="post-card">
         <div class="post-header">
           <span>吉村食堂</span>
-          <span style="font-size:12px; color:#888;">たった今</span>
+          <span style="font-size:12px; color:#888;">10分前</span>
         </div>
         <p style="font-size:13px; color:#555;">住所：サンプル県サンプル市サンプル町1-1</p>
-        <p style="font-size:13px; color:#555; margin-bottom:8px;">営業時間：11:00〜15:00 / 17:00〜21:00</p>
+        <p style="font-size:13px; color:#555; margin-bottom:6px;">営業時間：11:00〜15:00 / 17:00〜21:00</p>
         <div class="tag-list">
+          <span class="tag tag-special">⭐ 本日限定スペシャル</span>
           <span class="tag">今、空いている</span>
           <span class="tag">並ばずに入れる</span>
         </div>
-        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Not crowded / No waiting time]</div>
-      </div>
-
-      <!-- サンプル投稿カード2 -->
-      <div class="post-card">
-        <div class="post-header">
-          <span>サンプル和菓子処</span>
-          <span style="font-size:12px; color:#888;">10分前</span>
-        </div>
-        <p style="font-size:13px; color:#555;">本日のおすすめ：名物おむすび餅</p>
-        <div class="tag-list">
-          <span class="tag">売り切れ間近</span>
-        </div>
-        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Almost sold out]</div>
+        <div style="font-size:12px; color:#888; margin-top:8px;">[外国人画面自動変換: Special Menu Today / Not crowded]</div>
       </div>
     </main>
 
