@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>oh,結び - ポイント特典一覧</title>
+  <title>oh,結び - ポイント特典・クーポン一覧</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -19,6 +19,16 @@
         <div style="font-size:12px; color:#888;">地元の掲示板に情報投稿してポイントゲット！</div>
       </div>
 
+      <!-- 自分の持っている特典・保有クーポン表示エリア -->
+      <div style="margin-top:12px;">
+        <div style="font-weight:bold; font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+          <span>🎟️ My特典・保有クーポン（所持中）</span>
+        </div>
+        <div id="my-rewards-container">
+          <!-- JSで保有しているクーポン・特典がここに動的表示されます -->
+        </div>
+      </div>
+
       <div class="ad-banner" style="margin-top:10px;">
         <div class="ad-content">
           <span class="ad-badge">スポンサー</span>
@@ -28,7 +38,7 @@
         <button type="button" class="ad-btn btn-exchange" data-cost="5" data-title="カレー無料トッピング券">交換</button>
       </div>
 
-      <div style="font-weight:bold; font-size:15px; margin-top:10px;">交換可能な特典</div>
+      <div style="font-weight:bold; font-size:15px; margin-top:10px;">🎁 ポイントで交換できる特典</div>
 
       <div class="reward-card">
         <div class="reward-info">

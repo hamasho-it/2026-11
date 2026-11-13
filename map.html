@@ -3,23 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>oh,結び - マップ画面</title>
+  <title>oh,結び - ビジュアルマップ</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="app-container">
     <header>
-      <h1>マップ画面</h1>
+      <a href="./home.html" class="btn-back">戻る</a>
+      <h1>ビジュアルマップ</h1>
     </header>
     <main>
-      <input type="text" placeholder="どこに行く？？" value="どこに行く？？">
-      
-      <div class="map-placeholder">
-        <img src="./images/map_placeholder.png" alt="地図" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerText='地図 (拡大・縮小可能)';">
+      <!-- 1. 移動手段（交通手段）の選択エリア -->
+      <div>
+        <div style="font-size:13px; font-weight:bold; color:#333; margin-bottom:8px;">🚶‍♂️ 移動手段を選択してください</div>
+        <div class="transport-grid-compact">
+          <div class="transport-btn selected" data-mode="バス">🚌 バス</div>
+          <div class="transport-btn" data-mode="徒歩">🚶 徒歩</div>
+          <div class="transport-btn" data-mode="汽車">🚂 汽車</div>
+          <div class="transport-btn" data-mode="車">🚗 車</div>
+          <div class="transport-btn" data-mode="自転車">🚲 自転車</div>
+          <div class="transport-btn" data-mode="飛行機">✈️ 飛行機</div>
+        </div>
       </div>
 
-      <div style="margin-top: 16px;">
-        <a href="./map_search.html" class="btn btn-primary">検索する</a>
+      <!-- 2. 移動手段選択後に連動して表示される目的地入力エリア -->
+      <div id="destination-input-section" style="margin-top: 10px; background: #fafafa; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0;">
+        <label for="map-search-input" style="font-size:12px; font-weight:bold; color:#555; display:block; margin-bottom:6px;">
+          📍 目的地を入力
+        </label>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="map-search-input" placeholder="目的地を入力（例: 吉村食堂）" value="吉村食堂" style="margin-bottom:0;">
+          <button type="button" id="map-search-btn" class="btn btn-primary" style="width:80px; margin-bottom:0; padding:10px 4px; font-size:14px; white-space:nowrap;">検索</button>
+        </div>
+      </div>
+
+      <!-- 状態案内テキスト -->
+      <div id="map-status-text" style="font-size:12px; font-weight:bold; color:#333; background:#eef; padding:8px 10px; border-radius:6px; text-align:center; margin-top:8px;">
+        【バスルート表示中】目的地: 吉村食堂
+      </div>
+
+      <!-- 3. マップ表示（ビジュアルマップ） -->
+      <div class="map-placeholder" style="margin-top:8px;">
+        <img src="./images/map_placeholder.png" alt="地図" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerText='地図 (ルート・現在地表示)';">
+      </div>
+
+      <div style="margin-top: 10px;">
+        <a href="./home.html" class="btn">ホームに戻る</a>
       </div>
     </main>
 
