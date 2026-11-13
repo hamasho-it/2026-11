@@ -219,21 +219,90 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- 4. 獲得ポイント＆特典交換処理 ---
+  // --- 4. 獲得ポイント＆保有特典・クーポン管理 ---
   let userPoints = parseInt(localStorage.getItem('omusubi_user_points') || '12', 10);
   const pointDisplayElems = document.querySelectorAll('.user-point-val');
   pointDisplayElems.forEach(elem => elem.textContent = userPoints);
 
+  // 初期所有特典のセットアップ（まだ何もなければサンプル保有特典を1つ用意）
+  if (!localStorage.getItem('omusubi_my_rewards')) {
+    const defaultRewards = [
+      { id: 101, title: '吉村食堂 名物おむすび1個無料券', date: '2026/11/11 獲得', code: 'COUPON-8821' }
+    ];
+    localStorage.setItem('omusubi_my_rewards', JSON.stringify(defaultRewards));
+  }
+
+  // 保有特典一覧の描画関数
+  function renderMyRewards() {
+    const myRewardsContainer = document.getElementById('my-rewards-container');
+    if (!myRewardsContainer) return;
+
+    const myRewards = JSON.parse(localStorage.getItem('omusubi_my_rewards') || '[]');
+    if (myRewards.length === 0) {
+      myRewardsContainer.innerHTML = '<div style="font-size:13px; color:#888; text-align:center; padding:12px; background:#f9f9f9; border-radius:6px;">現在獲得している特典・クーポンはありません。</div>';
+      return;
+    }
+
+    let html = '';
+    myRewards.forEach(r => {
+      html += `
+        <div class="my-reward-card">
+          <div>
+            <h4>🎟️ ${r.title}</h4>
+            <p style="color:#e65100; font-weight:bold; font-size:12px;">【利用可能】 コード: ${r.code || 'USE-NOW'}</p>
+            <p>${r.date}</p>
+          </div>
+          <button type="button" class="btn btn-use-reward" data-id="${r.id}" style="width:auto; padding:6px 12px; font-size:12px; margin-bottom:0; background:#333; color:#fff;">使用する</button>
+        </div>
+      `;
+    });
+    myRewardsContainer.innerHTML = html;
+
+    // クーポン使用ボタンのイベント登録
+    document.querySelectorAll('.btn-use-reward').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idToUse = parseInt(btn.getAttribute('data-id'), 10);
+        if (confirm('このクーポンを店舗スタッフに提示して使用しますか？')) {
+          let updated = JSON.parse(localStorage.getItem('omusubi_my_rewards') || '[]');
+          updated = updated.filter(item => item.id !== idToUse);
+          localStorage.setItem('omusubi_my_rewards', JSON.stringify(updated));
+          alert('クーポンを使用しました！');
+          renderMyRewards();
+        }
+      });
+    });
+  }
+
+  renderMyRewards();
+
+  // 特典交換処理
   const exchangeBtns = document.querySelectorAll('.btn-exchange');
   exchangeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const cost = parseInt(btn.getAttribute('data-cost') || '0', 10);
       const rewardTitle = btn.getAttribute('data-title') || '特典';
+      
       if (userPoints >= cost) {
         userPoints -= cost;
         localStorage.setItem('omusubi_user_points', userPoints.toString());
         pointDisplayElems.forEach(elem => elem.textContent = userPoints);
-        alert(`【交換完了】「${rewardTitle}」を獲得しました！\n残高：${userPoints}pt`);
+
+        // My特典リストに追加
+        const myRewards = JSON.parse(localStorage.getItem('omusubi_my_rewards') || '[]');
+        const now = new Date();
+        const dateStr = `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} 交換`;
+        const randomCode = 'CPN-' + Math.floor(1000 + Math.random() * 9000);
+
+        myRewards.unshift({
+          id: Date.now(),
+          title: rewardTitle,
+          date: dateStr,
+          code: randomCode
+        });
+        localStorage.setItem('omusubi_my_rewards', JSON.stringify(myRewards));
+
+        renderMyRewards();
+        alert(`【交換完了】「${rewardTitle}」を獲得しました！\n「My特典・保有クーポン」に追加されました。`);
       } else {
         alert(`ポイントが足りません（必要：${cost}pt / 所持：${userPoints}pt）`);
       }
